@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "ks-package-cpp"
+version = "0.1.0"
+description = ""
+authors = ["Kumar Shanu <you@example.com>"]
+readme = "README.md"
+packages = [{include = "ks_package_cpp"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["setuptools", "wheel", "pybind11"]
+build-backend = "setuptools.build_meta"
