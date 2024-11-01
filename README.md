@@ -92,3 +92,41 @@ Create python package in C language (aka., extension for python) easily using `P
 Install
 
     pip install dist/<package_name>-0.1-cp311-cp311-linux_x86_64.whl
+
+
+
+### In Rust
+#### Folder Structure
+```sh
+ks-package-rust                 # package root dir
+├── Cargo.toml                  # package metadata
+├── build
+├── ks_package_rust
+│   ├── __init__.py
+│   └── ks_package_rust.pyi     # type stub for the library
+├── setup.py                    # required `setup.py` file
+├── src                         # source code for the library
+│   └── lib.rs
+└── target
+    └── wheels                  # for distribution
+        └── <package_name>-0.1.0-cp311-cp311-manylinux_2_34_x86_64.whl
+```
+
+#### Build
+Create python package in Rust language (aka., extension for python) easily using `maturin` and `pyo3`.
+
+    pip install maturin
+
+Create new library
+
+    cargo new --lib <package_name>
+
+Build
+
+    maturin develop
+    maturin build
+
+
+Install
+
+    pip install target/wheels/<package_name>-0.1.0-cp311-cp311-manylinux_2_34_x86_64.whl
