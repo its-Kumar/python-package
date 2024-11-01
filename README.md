@@ -50,8 +50,45 @@ ks-package-cpp/
 ├── pyproject.toml
 ├── setup.py            # required `setup.py` file
 ├── src
-│   └── main.cpp
+│   └── main.cpp        # source code for package
 └── tests               # test cases
     ├── __init__.py
     └── test_main.py
 ```
+
+#### Build
+Create python package in C++ (aka., extension for python) easily using `pybind11`
+
+    pip install pybind11
+    python setup.py bdist_wheel
+
+Install
+
+    pip install dist/<package_name>-0.1-cp311-cp311-linux_x86_64.whl
+
+### In C
+#### Folder Structure
+```sh
+ks-package-c                    # package root dir
+├── README.md                   # about package
+├── build
+├── dist                        # for distribution
+│   └── ks_package_c-0.1-cp311-cp311-linux_x86_64.whl
+├── ks_package_c
+│   └── __init__.py
+├── pyproject.toml              # package metadata
+├── setup.py                    # required `setup.py` file
+├── src                         # source code
+│   └── main.c
+└── tests                       # test cases
+    └── __init__.py
+```
+
+#### Build
+Create python package in C language (aka., extension for python) easily using `Python.h` header
+
+    python setup.py bdist_wheel
+
+Install
+
+    pip install dist/<package_name>-0.1-cp311-cp311-linux_x86_64.whl
